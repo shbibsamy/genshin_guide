@@ -1,20 +1,12 @@
 <template>
   <div class="home">
-  <p>hello</p>
-  <input type="text" v-model="message">
-    <HelloWorld :message="message"></HelloWorld>
+    <h2>Home Page</h2>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  },
   data: function() {
     return {
       message: ""
