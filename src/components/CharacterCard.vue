@@ -7,7 +7,7 @@
             <span class="info"> {{ characterInfo.nation }} </span>
         </div>
         <div v-bind:class="characterInfo.vision, 'presentation'">
-            <img class="icon" v-bind:src="`https://api.genshin.dev/characters/${characterInfo.name}/icon`" v-bind:alt="characterInfo.name">
+            <img class="icon" v-bind:src="`https://api.genshin.dev/characters/${characterInfo.name}/icon-big`" @error="imageLoadError" v-bind:alt="characterInfo.name">
         </div>
         <!-- <img v-bind:src="'@/assets/img/info-icons/bow.webp'" v-bind:alt="characterInfo.weapon"> -->
         <!-- <img v-bind:src="`@/assets/img/info-icons/${characterInfo.nation}`" v-bind:alt="characterInfo.nation">
@@ -28,6 +28,11 @@ export default {
             characterInfo: {},
         }
     },
+    methods: {
+        imageLoadError() {
+            
+        }
+    },  
     beforeMount() {
         fetch(`https://api.genshin.dev/characters/${this.characterName}`)
         .then(response => response.json())
@@ -38,9 +43,6 @@ export default {
                     this.characterInfo[key] = value.toLowerCase().replace(/ /g,"-");;
                     if (this.characterInfo[key] === "kamisato-ayaka") {
                         this.characterInfo[key] = "ayaka"
-                    }
-                    if (this.characterInfo[key] === "kamisato-ayato") {
-                        this.characterInfo[key] = "ayato"
                     }
                     if (this.characterInfo[key] === "kaedehara-kazuha") {
                         this.characterInfo[key] = "kazuha"
@@ -78,7 +80,7 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 30px;
+    height: 50px;
 }
 
 .info {
@@ -117,7 +119,7 @@ export default {
 .icon {
     padding-top: 5px;
     width: fit-content;
-    height: 125px;
+    height: 160px;
 }
 
 </style>

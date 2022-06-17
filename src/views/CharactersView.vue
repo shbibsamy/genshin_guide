@@ -45,6 +45,6 @@ export default {
   border: 2px solid #F1CA99;
   width: 180px;
   margin: 10px;
-  height: 180px;
+  height: 235px;
 }
 </style>
