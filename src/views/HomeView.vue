@@ -18,7 +18,7 @@ export default {
 <style>
 .home {
   min-height: 50vh;
-  background-image: url(../assets/Azhdaha.png);
+  background-image: url(@/assets/img/azhdaha.png);
   background-size: 100vw;
   background-repeat: no-repeat;
   background-position: bottom;
