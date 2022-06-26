@@ -1,0 +1,70 @@
+/* Structure */
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #FAF6EC;
+}
+
+body {
+    background-color: #2D2A29;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid #F6B86A;
+}
+
+/* General styles */
+h1 {
+    font-size: 2rem;
+    margin: 1rem;
+    padding: 1rem;
+    border: 3px solid #F1CA99;
+    margin-bottom: 0%;
+    box-shadow:
+        0 0 0 2px #F6B86A;
+    border-radius: 7px;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+/* Navbar styles general */
+nav {
+    padding: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav li {
+    width: 10rem;
+    padding: 0.3rem;
+    margin: 0.3rem;
+    border: 3px solid #F1CA99;
+    box-shadow:
+        0 0 0 2px #F6B86A;
+    border-radius: 8px;
+}
+
+nav a.router-link-exact-active {
+    color: #FAF6EC;
+    font-weight: bolder;
+}
