@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <router-link to="/characters/info" class="link card">
         <h3>{{ characterInfo.name }}</h3>
         <div class="information">
             <span class="info"> {{ characterInfo.weapon }} </span>
@@ -12,7 +12,7 @@
         <!-- <img v-bind:src="'@/assets/img/info-icons/bow.webp'" v-bind:alt="characterInfo.weapon"> -->
         <!-- <img v-bind:src="`@/assets/img/info-icons/${characterInfo.nation}`" v-bind:alt="characterInfo.nation">
         <img v-bind:src="`@/assets/img/info-icons/${characterInfo.vision}`" v-bind:alt="characterInfo.vision"> -->
-    </div>
+    </router-link>
 </template>
 <script>
 export default {
