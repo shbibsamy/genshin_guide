@@ -1,7 +1,9 @@
 <template>
     <article class="comment">
         <comment-head>
-            <h3>Comment Title</h3>
+            <h4>Comment Title</h4>
+            <span class="comment-username">Posted by: USERNAME </span>
+            <span class="comment-date">On: DATE/00/00</span>
         </comment-head>
         <comment-body>
             <p>
@@ -28,6 +30,8 @@ export default {
 </script>
 <style>
 .comment {
-    margin: auto;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #FAF6EC;
 }
 </style>
