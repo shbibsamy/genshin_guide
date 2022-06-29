@@ -19,9 +19,6 @@
             <router-link to="/enemies" class="link">Enemies</router-link>
           </li>
           <li>
-            <router-link to="/bosses" class="link">Bosses</router-link>
-          </li>
-          <li>
             <router-link to="/guides" class="link">Guides</router-link>
           </li>
         </ul>

@@ -1,5 +1,5 @@
 <template>
-    <router-link to="/characters/info" class="link card">
+    <router-link :to="{ name: 'Info', params: { characterName : characterInfo.name } }" class="link card">
         <h3>{{ characterInfo.name }}</h3>
         <div class="information">
             <span class="info"> {{ characterInfo.weapon }} </span>

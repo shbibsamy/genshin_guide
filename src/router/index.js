@@ -20,7 +20,8 @@ const routes = [
   {
     path: '/characters/info',
     name: 'Info',
-    component: CharacterInfoView
+    component: CharacterInfoView,
+    props: true
   },
   {
     path: '/weapons',
