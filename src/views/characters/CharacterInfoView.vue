@@ -2,7 +2,7 @@
     <div class="character-info">
         <h2>Character Information (mockup)</h2>
         <div class="character-header">
-            <h3 class="character-name">Yelan</h3>
+            <h3 class="character-name">{{characterName}}</h3>
             <img src="https://www.gamosaurus.com/wp-content/uploads/2022/03/vignette-genshin-impact-yelan-annonce-date-de-sortie-infos-patch-2-7-768x432.jpg" alt="Character portrait">
         </div>
         <div class="character-body">
@@ -29,17 +29,23 @@
             </ul>
         </div>
         <section class="comments-section">
-            <CommentsBox></CommentsBox>
-            <CommentsBox></CommentsBox>
+            <CommentEmptyBox :characterName="characterName" ></CommentEmptyBox>
+            <Comment></Comment>
+            <Comment></Comment>
         </section>
     </div>
 </template>
 <script>
-import CommentsBox from '@/components/CommentsBox.vue'
+import Comment from '@/components/Comment.vue'
+import CommentEmptyBox from '@/components/CommentEmptyBox.vue'
 export default {
     name: 'CharacterInfoView',
     components: {
-    CommentsBox
+    CommentEmptyBox,
+    Comment
+    },
+    props: {
+        characterName : String,
     }
 }
 </script>
@@ -59,7 +65,7 @@ export default {
 }
 
 .character-description {
-    width: 90%;
+    width: 60%;
     margin: auto;
     margin-bottom: 1rem;
     padding: 10px;
@@ -89,6 +95,9 @@ export default {
 }
 
 .comments-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: auto;
     width: 90%;
     padding: 1rem;
