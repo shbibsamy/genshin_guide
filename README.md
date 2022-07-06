@@ -1,19 +1,29 @@
-# genshin_guide
+# genshin_guide front-end development documentation
 
-## Project setup
-```
-npm install
-```
+## Structure
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Views
+App.vue contains entire website functionality.
+Each menu option pertains to a single folder in @/Views which contains all relevant pages.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Components
+Components for reusable code.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Naming conventions
+
+### HTML/CSS
+- Classes: name-of-class
+- IDs: name_of_id
+
+### JS
+
+#### Views and components
+- Views: NameView.vue
+- Components: Name.vue
+
+#### Properties and variables
+Declare using 'let', use camelCase. 
+
+#### Methods and functions
+Use camelCase.
+
