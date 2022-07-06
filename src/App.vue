@@ -7,19 +7,19 @@
         <label class="menu-icone" for="menu-bouton"><span class="nav-icone"></span></label>      
         <ul class="menu" >
           <li>
-            <router-link to="/" class="link">Home</router-link>
+            <router-link to="/" class="link" @click="closeMenu()">Home</router-link>
           </li>
           <li>
-            <router-link to="/characters" class="link">Characters</router-link>
+            <router-link to="/characters" class="link" @click="closeMenu()">Characters</router-link>
           </li>
           <li>
-            <router-link to="/weapons" class="link">Weapons</router-link>
+            <router-link to="/weapons" class="link" @click="closeMenu()">Weapons</router-link>
           </li>
           <li>
-            <router-link to="/enemies" class="link">Enemies</router-link>
+            <router-link to="/enemies" class="link" @click="closeMenu()">Enemies</router-link>
           </li>
           <li>
-            <router-link to="/guides" class="link">Guides</router-link>
+            <router-link to="/guides" class="link" @click="closeMenu()">Guides</router-link>
           </li>
         </ul>
       </nav>
@@ -39,6 +39,12 @@ export default {
   data: function() {
     return {
       data: {},
+    }
+  },
+  methods: {
+    closeMenu() {
+      let menuButton = document.querySelector(".menu-bouton");
+      menuButton.checked = false;
     }
   },
   beforeMount() {

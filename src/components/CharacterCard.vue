@@ -119,7 +119,7 @@ export default {
 .icon {
     padding-top: 5px;
     width: fit-content;
-    height: 160px;
+    height: 150px;
 }
 
 </style>
