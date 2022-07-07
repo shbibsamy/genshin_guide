@@ -2,16 +2,13 @@
     <router-link :to="{ name: 'Info', params: { characterName : characterInfo.name } }" class="link card">
         <h3>{{ characterInfo.name }}</h3>
         <div class="information">
-            <span class="info"> {{ characterInfo.weapon }} </span>
-            <span class="info"> {{ characterInfo.vision }} </span>
-            <span class="info"> {{ characterInfo.nation }} </span>
+            <!-- <img class="info" v-bind:src="require(`@/assets/img/info-icons/weapons/${characterInfo.weapon}.webp`)" v-bind:alt="characterInfo.weapon"> -->
+            <!-- <img class="info" v-bind:src="require(`@/assets/img/info-icons/elements/${characterInfo.vision}.webp`)" v-bind:alt="characterInfo.vision">
+            <img class="info" v-bind:src="require(`@/assets/img/info-icons/nations/${characterInfo.nation}.webp`)" v-bind:alt="characterInfo.nation"> -->
         </div>
         <div v-bind:class="characterInfo.vision, 'presentation'">
-            <img class="icon" v-bind:src="`https://api.genshin.dev/characters/${characterInfo.name}/icon-big`" @error="imageLoadError" v-bind:alt="characterInfo.name">
+            <img class="icon" v-bind:src="require(`@/assets/img/characters/icons/${characterInfo.name}.webp`)"  v-bind:alt="characterInfo.name">
         </div>
-        <!-- <img v-bind:src="'@/assets/img/info-icons/bow.webp'" v-bind:alt="characterInfo.weapon"> -->
-        <!-- <img v-bind:src="`@/assets/img/info-icons/${characterInfo.nation}`" v-bind:alt="characterInfo.nation">
-        <img v-bind:src="`@/assets/img/info-icons/${characterInfo.vision}`" v-bind:alt="characterInfo.vision"> -->
     </router-link>
 </template>
 <script>
@@ -33,34 +30,14 @@ export default {
             
         }
     },  
-    beforeMount() {
+    created() {
         fetch(`https://api.genshin.dev/characters/${this.characterName}`)
         .then(response => response.json())
         .then(json => {
             this.characterInfo = json;
             for (const [key, value] of Object.entries(this.characterInfo)) {
                 if (typeof value === "string") {
-                    this.characterInfo[key] = value.toLowerCase().replace(/ /g,"-");;
-                    if (this.characterInfo[key] === "kamisato-ayaka") {
-                        this.characterInfo[key] = "ayaka"
-                    }
-                    if (this.characterInfo[key] === "kaedehara-kazuha") {
-                        this.characterInfo[key] = "kazuha"
-                    }
-                    if (this.characterInfo[key] === "sangonomiya-kokomi") {
-                        this.characterInfo[key] = "kokomi"
-                    }
-                    if (this.characterInfo[key] === "raiden-shogun") {
-                        this.characterInfo[key] = "raiden"
-                    }
-                    if (this.characterInfo[key] === "kujou-sara") {
-                        this.characterInfo[key] = "sara"
-                    }
-                } else {
-                    // for (const [innerKey, innerValue] of Object.entries(this.characterInfo[key])) {
-                    //     console.log(innerKey)
-                    //     this.characterInfo[key][innerKey] = innerValue.toLowerCase();
-                    // }
+                    this.characterInfo[key] = value.toLowerCase().replace(/ /g,"-");
                 }
             }
             // console.log(this.characterInfo);

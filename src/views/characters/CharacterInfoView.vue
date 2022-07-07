@@ -29,9 +29,12 @@
             </ul>
         </div>
         <section class="comments-section">
-            <CommentEmptyBox :characterName="characterName" ></CommentEmptyBox>
-            <Comment></Comment>
-            <Comment></Comment>
+            <div class="new-comment">
+                <CommentEmptyBox :characterName="characterName" ></CommentEmptyBox>
+            </div>
+            <div class="comments" v-if="currentCharacterComments.length>0">
+                <Comment v-for="comment in currentCharacterComments"></Comment>
+            </div>
         </section>
     </div>
 </template>
@@ -42,10 +45,18 @@ export default {
     name: 'CharacterInfoView',
     components: {
     CommentEmptyBox,
-    Comment
+    Comment,
     },
     props: {
         characterName : String,
+    },
+    data: function(){
+        return {
+            currentCharacterComments: [],
+        }
+    },
+    beforeMount() {
+        this.currentCharacterComments=this.$store.state.characterComment;
     }
 }
 </script>
