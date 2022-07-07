@@ -2,7 +2,7 @@
     <div class="character-info">
         <h2>Character Information (mockup)</h2>
         <div class="character-header">
-            <h3 class="character-name">{{characterName}}</h3>
+            <h3 class="character-name">{{characterInfo.name}}</h3>
             <img src="https://www.gamosaurus.com/wp-content/uploads/2022/03/vignette-genshin-impact-yelan-annonce-date-de-sortie-infos-patch-2-7-768x432.jpg" alt="Character portrait">
         </div>
         <div class="character-body">
@@ -10,16 +10,18 @@
                 <h3>Description</h3>
                 <p>She is a mysterious person who claims to work for the Ministry of Civil Affairs. However, she is actually the head of the Yanshang Teahouse.</p>
             </div>
+
+            <!-- CREATE OBJECT ON MOUNT TO HOLD IMAGE URLS -->
             <ul class="character-quick-info">
                 <li class="quick-info-column">
                     <h4>Vision</h4>
                     <h5>Hydro</h5>
-                    <img src="@/assets/img/info-icons/elements/hydro.webp" alt="Element">
+                    <img :src="''" alt="Element">
                 </li>
                 <li class="quick-info-column">
                     <h4>Nation</h4>
                     <h5>Liyue</h5>
-                    <img src="@/assets/img/info-icons/nations/liyue.webp" alt="Nation">
+                    <img :src="'img/info-icons/nations/'+characterInfo.nation+'.webp'" alt="Nation">
                 </li>
                 <li class="quick-info-column">
                     <h4>Weapon</h4>
@@ -48,14 +50,18 @@ export default {
     Comment,
     },
     props: {
-        characterName : String,
+        characterInfoString:null,
     },
     data: function(){
         return {
             currentCharacterComments: [],
+            characterInfo: {},
         }
     },
+    created(){
+    },
     beforeMount() {
+        this.characterInfo = JSON.parse(this.characterInfoString);
         this.currentCharacterComments=this.$store.state.characterComment;
     }
 }

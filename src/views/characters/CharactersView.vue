@@ -47,4 +47,14 @@ export default {
   margin: 10px;
   height: 235px;
 }
+
+@media screen and (min-width: 900px) {
+  .character {
+  border: 2px solid #F1CA99;
+  width: 180px;
+  margin: 10px;
+  height: 235px;
+}
+
+}
 </style>
