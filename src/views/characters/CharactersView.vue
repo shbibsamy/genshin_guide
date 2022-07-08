@@ -52,12 +52,12 @@ export default {
   .characters {
     width: 80%;
   }
+  
   .character {
   border: 2px solid #F1CA99;
   width: 288px;
   margin: 15px;
   height: 376px;
-}
-
+  }
 }
 </style>

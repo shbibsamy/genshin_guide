@@ -60,6 +60,7 @@ export default {
     created(){
         this.characterInfo = JSON.parse(this.characterInfoString);
         this.characterImgUrls.icon='/img/characters/splash/'+this.characterInfo.name+'.webp';
+        // Make this into a loop
         this.characterImgUrls.vision='/img/info-icons/elements/'+this.characterInfo.vision+'.webp';
         this.characterImgUrls.nation='/img/info-icons/nations/'+this.characterInfo.nation+'.webp';
         this.characterImgUrls.weapon='/img/info-icons/weapons/'+this.characterInfo.weapon+'.webp';
@@ -137,6 +138,7 @@ export default {
     .character-quick-info {
         width: 60%;
     }
+
     .comments-section {
     width: 60%;
     }
