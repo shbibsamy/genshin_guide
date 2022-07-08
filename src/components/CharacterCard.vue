@@ -45,7 +45,7 @@ export default {
             this.characterInfo = json;
             for (const [key, value] of Object.entries(this.characterInfo)) {
                 if (typeof value === "string") {
-                    this.characterInfo[key] = value.toLowerCase();
+                    this.characterInfo[key] = value.toLowerCase().replace('-', ' ');
                 }
             }
             console.log(this.characterInfo);
