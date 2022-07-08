@@ -1,13 +1,13 @@
 <template>
-    <router-link :to="{ name: 'Info', params: { characterName : characterInfo.name } }" class="link card">
-        <h3>{{ characterInfo.name }}</h3>
+    <router-link :to="{ name: 'Info', params: { characterInfoString: JSON.stringify(characterInfo) }}" @mouseover.native="hover = true" @mouseleave.native="hover = false" class="link card" @click="loadCurrentCharacter()">
+        <span>{{ characterInfo.name }}</span>
         <div class="information">
-            <!-- <img class="info" v-bind:src="require(`@/assets/img/info-icons/weapons/${characterInfo.weapon}.webp`)" v-bind:alt="characterInfo.weapon"> -->
-            <!-- <img class="info" v-bind:src="require(`@/assets/img/info-icons/elements/${characterInfo.vision}.webp`)" v-bind:alt="characterInfo.vision">
-            <img class="info" v-bind:src="require(`@/assets/img/info-icons/nations/${characterInfo.nation}.webp`)" v-bind:alt="characterInfo.nation"> -->
+            <img class="info" :src="characterImgUrls.weapon" v-bind:alt="characterInfo.weapon">
+            <img class="info" :src="characterImgUrls.vision" v-bind:alt="characterInfo.weapon">
+            <img class="info" :src="characterImgUrls.nation" v-bind:alt="characterInfo.weapon">
         </div>
         <div v-bind:class="characterInfo.vision, 'presentation'">
-            <img class="icon" v-bind:src="require(`@/assets/img/characters/icons/${characterInfo.name}.webp`)"  v-bind:alt="characterInfo.name">
+            <img class="icon" :src="characterImgUrls.icon"  v-bind:alt="characterInfo.name">
         </div>
     </router-link>
 </template>
@@ -23,24 +23,37 @@ export default {
     data: function() {
         return {
             characterInfo: {},
+            characterImgUrls: {},
+            hover: false,
         }
     },
     methods: {
         imageLoadError() {
             
+        },
+        getImgUrl(type) {
+            return this.characterImgUrls[type];
+        },
+        loadCurrentCharacter() {
+            this.$store.commit("CURRENT_CHARACTER_UPDATE", this.characterInfo);
         }
-    },  
-    created() {
+    },
+    beforeCreate() {
         fetch(`https://api.genshin.dev/characters/${this.characterName}`)
         .then(response => response.json())
         .then(json => {
             this.characterInfo = json;
             for (const [key, value] of Object.entries(this.characterInfo)) {
                 if (typeof value === "string") {
-                    this.characterInfo[key] = value.toLowerCase().replace(/ /g,"-");
+                    this.characterInfo[key] = value.toLowerCase().replace('-', ' ');
                 }
             }
-            // console.log(this.characterInfo);
+            console.log(this.characterInfo);
+            this.characterImgUrls.icon = 'img/characters/icons/'+this.characterName+'.webp';
+            this.characterImgUrls.weapon = 'img/info-icons/weapons/'+this.characterInfo.weapon+'.webp';
+            this.characterImgUrls.nation = 'img/info-icons/nations/'+this.characterInfo.nation+'.webp';
+            this.characterImgUrls.vision = 'img/info-icons/elements/'+this.characterInfo.vision+'.webp';
+            
         })
     }
 }
@@ -50,8 +63,13 @@ export default {
     margin: auto;
 }
 
+.card:hover {
+    filter: brightness(1.2);
+}
+
 .card h3, .card span{
     text-transform: capitalize;
+    font-size: 1.1rem;
 }
 .information {
     display: flex;
@@ -61,8 +79,8 @@ export default {
 }
 
 .info {
-    width: 32%;
-    font-size: 0.6rem;
+    width: 40px;
+    max-height: 40px;
 }
 
 .geo {
@@ -96,7 +114,7 @@ export default {
 .icon {
     padding-top: 5px;
     width: fit-content;
-    height: 150px;
+    height: 156px;
 }
 
 </style>
