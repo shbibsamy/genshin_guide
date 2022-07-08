@@ -2,7 +2,7 @@
   <div class="characters">
     <h2>Characters</h2>
     <div class="cards">
-        <CharacterCard v-for="character in this.$store.state.data.characters" :characterName=character class="character" />
+        <CharacterCard v-for="name in this.$store.state.data.characters" :characterName=name class="character" />
     </div>
   </div>
 </template>
@@ -46,5 +46,15 @@ export default {
   width: 180px;
   margin: 10px;
   height: 235px;
+}
+
+@media screen and (min-width: 900px) {
+  .character {
+  border: 2px solid #F1CA99;
+  width: 180px;
+  margin: 10px;
+  height: 235px;
+}
+
 }
 </style>
