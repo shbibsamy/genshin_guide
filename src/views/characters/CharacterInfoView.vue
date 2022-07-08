@@ -1,9 +1,9 @@
 <template>
     <div class="character-info">
-        <h2>Character Information (mockup)</h2>
+        <h2>Character Information (wip)</h2>
         <div class="character-header">
             <h3 class="character-name">{{characterInfo.name}}</h3>
-            <img :src="characterImgUrls.icon" alt="Character portrait">
+            <img :src="characterImgUrls.icon" alt="Character portrait" class="character-portrait">
         </div>
         <div class="character-body">
             <div class="character-description">
@@ -74,7 +74,7 @@ export default {
     }
 }
 </script>
-<style>
+<style scoped>
 .character-header {
     margin: auto;
     width: 80%;
@@ -90,6 +90,9 @@ export default {
     margin: 5px;
 }
 
+.character-portrait {
+    max-width: 700px;
+}
 .character-description {
     width: 60%;
     margin: auto;

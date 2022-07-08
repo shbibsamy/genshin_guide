@@ -5,6 +5,7 @@ import CharacterInfoView from '../views/characters/CharacterInfoView.vue'
 import WeaponsView from '../views/weapons/WeaponsView.vue'
 import EnemiesView from '../views/enemies/EnemiesView.vue'
 import GuidesView from '../views/guides/GuidesView.vue'
+import ConnectionView from '../views/account/ConnectionView.vue'
 
 const routes = [
   {
@@ -37,6 +38,11 @@ const routes = [
     path: '/guides',
     name: 'Guides',
     component: GuidesView
+  },
+  {
+    path: '/account',
+    name: 'Account',
+    component: ConnectionView
   },
   // {
   //   path: '/weapons',
