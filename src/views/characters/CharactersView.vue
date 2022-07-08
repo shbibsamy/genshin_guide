@@ -48,12 +48,12 @@ export default {
   height: 235px;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1061px) {
   .character {
   border: 2px solid #F1CA99;
-  width: 180px;
-  margin: 10px;
-  height: 235px;
+  width: 288px;
+  margin: 15px;
+  height: 376px;
 }
 
 }

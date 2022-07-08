@@ -83,6 +83,18 @@ export default {
     max-height: 40px;
 }
 
+.presentation {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.icon {
+    padding-top: 5px;
+    width: fit-content;
+    height: 156px;
+}
+
 .geo {
     background-color: #FAB632;
 }
@@ -105,16 +117,25 @@ export default {
     background-color: #74C2A8;
 }
 
-.presentation {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
+/* Desktop */
+@media screen and (min-width: 1061px) {
+    .card h3, .card span{
+    font-size: 1.6rem;
+    }
+    .information {
+        height: 80px;
+    }
 
-.icon {
-    padding-top: 5px;
-    width: fit-content;
-    height: 156px;
+    .info {
+        width: 60px;
+        max-height: 60px;
+    }
+
+    .icon {
+        padding: 5px;
+        width: fit-content;
+        height: 259px;
+    }
 }
 
 </style>
