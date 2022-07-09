@@ -134,7 +134,7 @@ export default {
     .icon {
         padding: 5px;
         width: fit-content;
-        height: 259px;
+        height: 262px;
     }
 }
 

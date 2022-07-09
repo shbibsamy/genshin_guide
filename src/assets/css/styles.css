@@ -32,18 +32,13 @@ img {
     color: #FAF6EC;
 }
 
-.header label {
-    display: flex;
-    justify-content: space-between;
-    width: 240px;
-    margin: 0.5rem;
+.header {
+    border-bottom: 2px solid #EF7939;
+    box-shadow: 0 0 0 3px #c25030;
 }
 
-.header select {
-    padding: 0.2rem;
-    border-radius: 1rem;
-    border-top-left-radius: 0;
-    font-weight: bolder;
+main {
+    margin: 1rem;
 }
 
 body {
@@ -55,7 +50,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     height: 4rem;
-    border-top: 4px solid #F6B86A;
+    border: 2px solid #EF7939;
+    box-shadow: 0 0 0 3px #c25030;
 }
 
 /* General styles */
@@ -63,10 +59,9 @@ h1 {
     font-size: 2rem;
     margin: 1rem;
     padding: 1rem;
-    border: 3px solid #F1CA99;
+    border: 2px solid #EF7939;
     margin-bottom: 0%;
-    box-shadow:
-        0 0 0 2px #F6B86A;
+    box-shadow: 0 0 0 3px #c25030;
     border-radius: 1rem;
     border-top-left-radius: 0;
 }
@@ -88,8 +83,24 @@ h5 {
 }
 
 /* Navbar styles general */
+.header label {
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    margin-top: 1rem;
+}
+
+.header select {
+    padding: 0.2rem;
+    border-radius: 1rem;
+    border-top-left-radius: 0;
+    font-weight: bolder;
+    border: 2px solid #EF7939;
+    box-shadow: 0 0 0 3px #c25030;
+}
+
 nav {
-    padding: 1.5rem;
+    padding: 0.5rem;
 }
 
 nav a {
@@ -100,9 +111,9 @@ nav li {
     width: 10rem;
     padding: 0.3rem;
     margin: 0.3rem;
-    border: 3px solid #F1CA99;
+    border: 2px solid #EF7939;
     box-shadow:
-        0 0 0 2px #F6B86A;
+        0 0 0 3px #c25030;
     border-radius: 1rem;
     border-top-left-radius: 0;
 }

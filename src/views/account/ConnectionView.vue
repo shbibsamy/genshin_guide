@@ -1,7 +1,7 @@
 <template>
     <div class="account-box">
         <h2>Account Options</h2>
-        <div class="account-box-options">
+        <div class="account-box-options border">
             <input type="button" value="Login" @click="showForm('login')">
             <input type="button" value="Create" @click="showForm('create')">
         </div>
@@ -55,10 +55,10 @@ export default {
     width: 40%;
     margin: 1rem;
     padding: 1rem;
-    border: 4px solid #F6B86A;
     border-radius: 1rem;
     border-top-left-radius: 0;
-    box-shadow: 0px 0px 24px #F6B86A;
+    border: 2px solid #FAF6EC;
+    box-shadow: 0px 0px 8px 12px #adaaa3;
 }
 
 .account-box-options {
@@ -67,7 +67,8 @@ export default {
     width: 50%;
     margin: 1rem;
     padding: 1rem;
-    border: 4px solid #F6B86A;
+    border: 2px solid #FAF6EC;
+    box-shadow: 0px 0px 0px 3px #adaaa3;
     border-radius: 1rem;
     border-top-left-radius: 0;
 }
