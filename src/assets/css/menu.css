@@ -1,28 +1,22 @@
-/* Menu burger start */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-}
-
 a {
     color: #FAF6EC;
+    font-size: 1rem;
 }
 
 /* header */
 .header ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     padding: 0;
     margin-top: 1rem;
     list-style: none;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
 }
 
 /* menu */
-
 .header .menu {
     max-height: 0;
     transition: max-height .5s ease-out;
@@ -68,7 +62,6 @@ a {
 }
 
 /* menu bouton */
-
 .header .menu-bouton {
     display: none;
 }
@@ -100,7 +93,18 @@ a {
 }
 
 /* Desktop version */
-@media (min-width: 1061px) {
+@media screen and (min-width: 1061px) {
+    nav {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+    }
+
+    a {
+        font-size: 1.5rem;
+    }
+
     .header {
         display: flex;
         flex-direction: column;
@@ -114,15 +118,14 @@ a {
     .header ul {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         margin: 0;
+        width: 70%;
         padding: 0;
         list-style: none;
         overflow: hidden;
     }
 
-    /* .header li {
-
-    } */
     .header li link {
         padding: 1.25rem 1.875rem;
     }

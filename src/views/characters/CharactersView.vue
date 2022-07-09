@@ -42,7 +42,8 @@ export default {
 }
 
 .character {
-  border: 2px solid #F1CA99;
+  border: 2px solid #FAF6EC;
+  box-shadow: 0 0 0 3px #adaaa3;
   width: 180px;
   margin: 10px;
   height: 235px;
@@ -52,12 +53,11 @@ export default {
   .characters {
     width: 80%;
   }
+
   .character {
-  border: 2px solid #F1CA99;
   width: 288px;
   margin: 15px;
-  height: 376px;
-}
-
+  height: 380px;
+  }
 }
 </style>
