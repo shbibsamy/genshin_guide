@@ -33,6 +33,7 @@ img {
 }
 
 .header {
+    background: radial-gradient(ellipse at 50%, rgba(239, 121, 57, 0.25), #2D2A29);
     border-bottom: 2px solid #EF7939;
     box-shadow: 0 0 0 3px #c25030;
 }
