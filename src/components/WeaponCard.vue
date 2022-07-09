@@ -1,28 +1,23 @@
 <template>
-    <router-link :to="{ name: 'Info', params: { characterInfoString: JSON.stringify(characterInfo) }}" @mouseover.native="hover = true" @mouseleave.native="hover = false" class="link card" @click="loadCurrentCharacter()">
-        <span>{{ characterInfo.name }}</span>
-        <div class="information">
-            <img class="info" :src="imgUrls.weapon" v-bind:alt="characterInfo.weapon">
-            <img class="info" :src="imgUrls.vision" v-bind:alt="characterInfo.weapon">
-            <img class="info" :src="imgUrls.nation" v-bind:alt="characterInfo.weapon">
-        </div>
-        <div v-bind:class="characterInfo.vision, 'presentation'">
-            <img class="icon" :src="imgUrls.icon"  v-bind:alt="characterInfo.name">
+    <router-link :to="{ name: 'Info', params: { characterInfoString: JSON.stringify(weaponInfo) }}" @mouseover.native="hover = true" @mouseleave.native="hover = false" class="link card" @click="loadCurrentCharacter()">
+        <span>{{ weaponInfo.name }}</span>
+        <div v-bind:class="weaponInfo.vision, 'presentation'">
+            <img class="icon" :src="imgUrls.icon"  v-bind:alt="weaponInfo.name">
         </div>
     </router-link>
 </template>
 <script>
 export default {
-    name: "CharacterCard",
+    name: "WeaponCard",
     props: {
-        characterName: {
+        weaponName: {
             type: String,
             required: true,
         }
     },
     data: function() {
         return {
-            characterInfo: {},
+            weaponInfo: {},
             imgUrls: {},
             hover: false,
         }
@@ -32,28 +27,27 @@ export default {
             
         },
         getImgUrl(type) {
-            return this.characterImgUrls[type];
+            return this.imgUrls[type];
         },
-        loadCurrentCharacter() {
-            this.$store.commit("CURRENT_CHARACTER_UPDATE", this.characterInfo);
+        loadCurrentWeapon() {
+            this.$store.commit("CURRENT_WEAPON_UPDATE", this.weaponInfo);
         }
     },
     beforeCreate() {
-        fetch(`https://api.genshin.dev/characters/${this.characterName}`)
+        fetch(`https://api.genshin.dev/weapons/${this.weaponName}`)
         .then(response => response.json())
         .then(json => {
-            this.characterInfo = json;
-            for (const [key, value] of Object.entries(this.characterInfo)) {
+            this.weaponInfo = json;
+            for (const [key, value] of Object.entries(this.weaponInfo)) {
                 if (typeof value === "string") {
-                    this.characterInfo[key] = value.toLowerCase().replace('-', ' ');
+                    console.log(this.weaponInfo);
+                    if(key.rarity > 3) {
+                        this.weaponInfo[key] = value.toLowerCase().replace('-', ' ');
+                    }
                 }
             }
-            console.log(this.characterInfo);
-            this.imgUrls.icon = 'img/characters/icons/'+this.characterName+'.webp';
-            this.imgUrls.weapon = 'img/info-icons/weapons/'+this.characterInfo.weapon+'.webp';
-            this.imgUrls.nation = 'img/info-icons/nations/'+this.characterInfo.nation+'.webp';
-            this.imgUrls.vision = 'img/info-icons/elements/'+this.characterInfo.vision+'.webp';
-            
+            console.log(this.weaponInfo);
+            this.imgUrls.icon = 'img/weapons/icons/'+this.weaponName.replace('-', ' ')+'.png';
         })
     }
 }

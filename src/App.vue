@@ -128,11 +128,11 @@ export default {
         fetch(`https://api.genshin.dev/${option}`)
         .then(response => response.json())
         .then(json => {
-          let thisData = {};
-          thisData[option] = json;
-          Object.assign(this.data, thisData)
-        })
-      })
+          let fetchedDataContainer = {};
+          fetchedDataContainer[option] = json;
+          Object.assign(this.data, fetchedDataContainer)
+        });
+      });
     })
     this.$store.commit("DATA_UPDATE", this.data);
     console.log("stored data: ", this.$store.state.data);
