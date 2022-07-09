@@ -96,25 +96,25 @@ export default {
 }
 
 .geo {
-    background-color: #FAB632;
+    background-color: rgb(250, 184, 51);
 }
 .electro {
-    background-color: #AF8EC1;
+    background-color: rgb(175, 142, 193);
 }
 .pyro {
-    background-color: #EF7939;
+    background-color: rgb(239, 121, 57);
 }
 .hydro {
-    background-color: #4CC2F1;
+    background-color: rgb(76, 194, 241);
 }
 .cryo {
-    background-color: #9FD6E3;
+    background-color: rgb(159, 214, 227);
 }
 .dendro {
-    background-color: #A5C931;
+    background-color: rgb(165, 201, 49);
 }
 .anemo {
-    background-color: #74C2A8;
+    background-color: rgb(116, 194, 168);
 }
 
 /* Desktop */

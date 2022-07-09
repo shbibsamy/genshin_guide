@@ -63,69 +63,60 @@ export default {
       menuButton.checked = false;
     },
     elementSelector(){
+      let headerElement = document.querySelector(".header");
+      console.log(headerElement);
       let headerElementsWithBorders = document.querySelectorAll(".border");
-      let headerElementsWithShadows = document.querySelectorAll(".shadow");
-      let forms = document.querySelectorAll(".form");
-      headerElementsWithBorders.forEach(element => {
-        switch (this.elementColor) {
-          case 'pyro':
+      switch (this.elementColor) {
+        case 'pyro':
+          headerElement.style.background = "radial-gradient(ellipse at 50%, rgba(239, 121, 57, 0.25), #2D2A29)"
+          headerElementsWithBorders.forEach(element => {
             element.style.borderColor = "#EF7939";
             element.style.boxShadow = "0px 0px 0px 3px #c25030";
-            forms.forEach(form => {
-              form.style.borderColor = "#EF7939";
-              form.style.boxShadow = "0px 0px 16px 16px #c25030";
-            })
-            break;
-          case 'hydro':
+          })
+          break;
+        case 'hydro':
+          headerElement.style.background = "radial-gradient(ellipse at 50%, rgba(76, 194, 241, 0.25), #2D2A29)"
+          headerElementsWithBorders.forEach(element => {
             element.style.borderColor = "#4CC2F1";
             element.style.boxShadow = "0px 0px 0px 3px #3284c7";
-            forms.forEach(form => {
-              form.style.borderColor = "#4CC2F1";
-              form.style.boxShadow = "0px 0px 16px 16px #3284c7";
-            })
-            break;
-          case 'electro':
+          })
+          break;
+        case 'electro':
+          headerElement.style.background = "radial-gradient(ellipse at 50%, rgba(175, 142, 193, 0.25), #2D2A29)"
+          headerElementsWithBorders.forEach(element => {
             element.style.borderColor = "#AF8EC1";
             element.style.boxShadow = "0px 0px 0px 3px #805f9c";
-            forms.forEach(form => {
-              form.style.borderColor = "#AF8EC1";
-              form.style.boxShadow = "0px 0px 16px 16px #805f9c";
-            })
-            break;
-          case 'cryo':
+          })
+          break;
+        case 'cryo':
+          headerElement.style.background = "radial-gradient(ellipse at 50%, rgba(159, 214, 227, 0.25), #2D2A29)"
+          headerElementsWithBorders.forEach(element => {
             element.style.borderColor = "#9FD6E3";
             element.style.boxShadow = "0px 0px 0px 3px #5d96a3";
-            forms.forEach(form => {
-              form.style.borderColor = "#9FD6E3";
-              form.style.boxShadow = "0px 0px 16px 16px #5d96a3";
-            })
-            break;
-          case 'geo':
+          })
+          break;
+        case 'geo':
+          headerElement.style.background = "radial-gradient(ellipse at 50%, rgba(250, 184, 51, 0.25), #2D2A29)"
+          headerElementsWithBorders.forEach(element => {
             element.style.borderColor = "#F1CA99";
             element.style.boxShadow = "0px 0px 0px 3px #F6B86A";
-            forms.forEach(form => {
-              form.style.borderColor = "#F1CA99";
-              form.style.boxShadow = "0px 0px 16px 16px #F6B86A";
-            })
-            break;
-          case 'anemo':
+          })
+          break;
+        case 'anemo':
+          headerElement.style.background = "radial-gradient(ellipse at 50%, rgba(116, 194, 168, 0.25), #2D2A29)"
+          headerElementsWithBorders.forEach(element => {
             element.style.borderColor = "#74C2A8";
             element.style.boxShadow = "0px 0px 0px 3px #30755e";
-            forms.forEach(form => {
-              form.style.borderColor = "#74C2A8";
-              form.style.boxShadow = "0px 0px 16px 16px #30755e";
-            })
-            break;
-          case 'dendro':
+          })
+          break;
+        case 'dendro':
+          headerElement.style.background = "radial-gradient(ellipse at 50%, rgba(165, 201, 49, 0.25), #2D2A29)"
+          headerElementsWithBorders.forEach(element => {
             element.style.borderColor = "#A5C931";
             element.style.boxShadow = "0px 0px 0px 3px #5e7319";
-            forms.forEach(form => {
-              form.style.borderColor = "#A5C931";
-              form.style.boxShadow = "0px 0px 16px 16px #5e7319";
-            })
-            break;
+          })
+          break;
         }
-      })
     }
   },
   beforeMount() {
