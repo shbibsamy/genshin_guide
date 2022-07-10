@@ -1,7 +1,7 @@
 <template>
     <router-link :to="{ name: 'Info', params: { characterInfoString: JSON.stringify(weaponInfo) }}" @mouseover.native="hover = true" @mouseleave.native="hover = false" class="link card" @click="loadCurrentCharacter()">
         <span>{{ weaponInfo.name }}</span>
-        <div v-bind:class="weaponInfo.vision, 'presentation'">
+        <div class="presentation">
             <img class="icon" :src="imgUrls.icon"  v-bind:alt="weaponInfo.name">
         </div>
     </router-link>
@@ -38,16 +38,16 @@ export default {
         .then(response => response.json())
         .then(json => {
             this.weaponInfo = json;
+            
             for (const [key, value] of Object.entries(this.weaponInfo)) {
                 if (typeof value === "string") {
-                    console.log(this.weaponInfo);
                     if(key.rarity > 3) {
                         this.weaponInfo[key] = value.toLowerCase().replace('-', ' ');
                     }
                 }
             }
             console.log(this.weaponInfo);
-            this.imgUrls.icon = 'img/weapons/icons/'+this.weaponName.replace('-', ' ')+'.png';
+            this.imgUrls.icon = 'img/weapons/icons/'+this.weaponName.replaceAll('-', ' ').replace('  ', ' ')+'.png';
         })
     }
 }

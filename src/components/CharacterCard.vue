@@ -48,7 +48,6 @@ export default {
                     this.characterInfo[key] = value.toLowerCase().replace('-', ' ');
                 }
             }
-            console.log(this.characterInfo);
             this.imgUrls.icon = 'img/characters/icons/'+this.characterName+'.webp';
             this.imgUrls.weapon = 'img/info-icons/weapons/'+this.characterInfo.weapon+'.webp';
             this.imgUrls.nation = 'img/info-icons/nations/'+this.characterInfo.nation+'.webp';

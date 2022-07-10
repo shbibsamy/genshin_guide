@@ -19,22 +19,22 @@
         <label class="menu-icone" for="menu-bouton"><span class="nav-icone"></span></label>      
         <ul class="menu">
           <li class="border shadow">
-            <router-link to="/" class="link" @click="closeMenu()">Home</router-link>
+            <router-link :to="{ name:'Home' }" class="link" @click="closeMenu()">Home</router-link>
           </li>
           <li class="border shadow">
-            <router-link to="/characters" class="link" @click="closeMenu()">Characters</router-link>
+            <router-link :to="{ name:'Guides' }" class="link" @click="closeMenu()">Characters</router-link>
           </li>
           <li class="border shadow">
-            <router-link to="/weapons" class="link" @click="closeMenu()">Weapons</router-link>
+            <router-link :to="{ name:'Characters' }" class="link" @click="closeMenu()">Weapons</router-link>
           </li>
           <li class="border shadow">
-            <router-link to="/enemies" class="link" @click="closeMenu()">Enemies</router-link>
+            <router-link :to="{ name:'Weapons' }" class="link" @click="closeMenu()">Enemies</router-link>
           </li>
           <li class="border shadow">
-            <router-link to="/guides" class="link" @click="closeMenu()">Guides</router-link>
+            <router-link :to="{ name:'Enemies' }" class="link" @click="closeMenu()">Guides</router-link>
           </li>
           <li class="border shadow">
-            <router-link to="/Account" class="link" @click="closeMenu()">Account</router-link>
+            <router-link :to="{ name:'Account' }" class="link" @click="closeMenu()">Account</router-link>
           </li>
         </ul>
       </nav>
@@ -58,6 +58,9 @@ export default {
     }
   },
   methods: {
+    tempLog() {
+
+    },
     closeMenu() {
       let menuButton = document.querySelector(".menu-bouton");
       menuButton.checked = false;
@@ -135,7 +138,6 @@ export default {
       });
     })
     this.$store.commit("DATA_UPDATE", this.data);
-    console.log("stored data: ", this.$store.state.data);
   }
 }
 </script>
