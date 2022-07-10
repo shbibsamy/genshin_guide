@@ -6,6 +6,7 @@ import WeaponsView from '../views/weapons/WeaponsView.vue'
 import EnemiesView from '../views/enemies/EnemiesView.vue'
 import GuidesView from '../views/guides/GuidesView.vue'
 import ConnectionView from '../views/account/ConnectionView.vue'
+import MyAccount from '../views/account/MyAccountView.vue'
 
 const routes = [
   {

@@ -26,7 +26,7 @@ export default {
     },
 }
 </script>
-<style>
+<style scoped>
 .comment {
     margin: 1rem;
     padding: 1rem;

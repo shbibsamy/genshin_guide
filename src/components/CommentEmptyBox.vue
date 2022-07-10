@@ -48,7 +48,7 @@ export default {
     },
 }
 </script>
-<style>
+<style scoped>
 .empty-comment {
     display: flex;
     flex-direction: column;

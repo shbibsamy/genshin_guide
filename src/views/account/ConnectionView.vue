@@ -1,15 +1,35 @@
 <template>
     <div class="account-box">
         <h2>Account Options</h2>
-        <div class="account-box-options border">
-            <input type="button" value="Login" @click="showForm('login')">
-            <input type="button" value="Create" @click="showForm('create')">
+        <div class="logged-out" v-if="logged==false">
+            <div class="account-box-options border">
+                <input type="button" value="Login" @click="showForm('login')">
+                <input type="button" value="Create" @click="showForm('create')">
+            </div>
+            <div class="login-form" v-if="login==true">
+                <AccountLogin />
+            </div>
+            <div class="create-form" v-if="create==true">
+                <AccountCreate />
+            </div>
         </div>
-        <div class="login-form" v-if="login==true">
-            <AccountLogin />
-        </div>
-        <div class="create-form" v-if="create==true">
-            <AccountCreate />
+        <div class="logged-in" v-if="logged==true">
+            <h3>Welcome back! (mockup, just for show, no security or real data)</h3>
+            <div class="account-info">
+                <h4>Account information</h4>
+                <ul>
+                    <li>
+                        <span>First Name: X</span>
+                    </li>
+                    <li>
+                        <span>Last Name: X</span>
+                    </li>
+                    <li>
+                        <span>Username: X</span>
+                    </li>
+                </ul>
+                <input type="button" value="Modify">
+            </div>
         </div>
     </div>
 </template>
@@ -26,6 +46,7 @@ export default {
         return {
             login: false,
             create: false,
+            logged: false,
         }
     },
     methods: {
@@ -42,11 +63,28 @@ export default {
 }
 </script>
 <style scoped>
-.account-box {
+.logged-out {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
+}
+
+.logged-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+}
+
+.account-box-options {
+
+}
+
+.account-info {
+    margin: 1rem;
 }
 
 .login-form, .create-form {
@@ -81,7 +119,21 @@ input[type=button] {
     border-top-left-radius: 0;
 }
 
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #FAF6EC;
+}
+
+
 @media screen and (min-size: 1061px) {
-    
+    ul {
+    width: 600px;
+    border: 2px solid #FAF6EC;
+}
 }
 </style>

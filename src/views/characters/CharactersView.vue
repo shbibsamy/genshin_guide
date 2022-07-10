@@ -25,7 +25,7 @@ export default {
 }
 
 </script>
-<style>
+<style scoped>
 .characters {
   min-height: 50vh;
   width: 90%;
@@ -33,6 +33,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h2 {
+  margin: 1rem;
 }
 
 .cards {
