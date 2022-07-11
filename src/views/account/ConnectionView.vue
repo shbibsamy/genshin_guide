@@ -79,10 +79,6 @@ export default {
     padding: 1rem;
 }
 
-.account-box-options {
-
-}
-
 .account-info {
     margin: 1rem;
 }
