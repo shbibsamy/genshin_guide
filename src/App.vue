@@ -22,16 +22,16 @@
             <router-link :to="{ name:'Home' }" class="link" @click="closeMenu()">Home</router-link>
           </li>
           <li class="border shadow">
-            <router-link :to="{ name:'Guides' }" class="link" @click="closeMenu()">Characters</router-link>
+            <router-link :to="{ name:'Guides' }" class="link" @click="closeMenu()">Guides</router-link>
           </li>
           <li class="border shadow">
-            <router-link :to="{ name:'Characters' }" class="link" @click="closeMenu()">Weapons</router-link>
+            <router-link :to="{ name:'Characters' }" class="link" @click="closeMenu()">Characters</router-link>
           </li>
           <li class="border shadow">
-            <router-link :to="{ name:'Weapons' }" class="link" @click="closeMenu()">Enemies</router-link>
+            <router-link :to="{ name:'Weapons' }" class="link" @click="closeMenu()">Weapons</router-link>
           </li>
           <li class="border shadow">
-            <router-link :to="{ name:'Enemies' }" class="link" @click="closeMenu()">Guides</router-link>
+            <router-link :to="{ name:'Enemies' }" class="link" @click="closeMenu()">Enemies</router-link>
           </li>
           <li class="border shadow">
             <router-link :to="{ name:'Account' }" class="link" @click="closeMenu()">Account</router-link>
