@@ -43,12 +43,12 @@ export default {
 <style scoped>
 
 form {
-    width: 80%;
+    width: 85%;
 }
 
 fieldset {
     text-align: left;
-    margin: 0.5rem;
+    margin-top: 1rem;
     padding: 0.5rem;
     border: 2px solid #FAF6EC;
     border-radius: 1rem;
@@ -79,6 +79,7 @@ input[type=text], input[type=password] {
 
 input[type=submit], input[type=button] {
     width: 200px;
+    margin-top: 1rem;
     padding: 0.5rem;
     font-size: 1.2rem;
     border-radius: 1rem;
