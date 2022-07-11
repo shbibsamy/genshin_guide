@@ -28,6 +28,7 @@ a {
     display: block;
     position: relative;
     user-select: none;
+    width: 100%;
 }
 
 .header .menu-icone .nav-icone {

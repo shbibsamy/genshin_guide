@@ -9,38 +9,38 @@ Completion bar: [/////.....] in rough %.
 
 \* working on
 
-- Home          [/////.....] * (change menu colour based on chosen element)
+- Home          [/////.....]
 - Characters    [//////....]
-- Weapons       [/.........]
+- Weapons       [//........]
 - Enemies       [/.........]
-- Guides        [/.........]
+- Guides        [///.......]
 - My Account    [//........]
 
 #### Home
 
 - Background image
-- Menu colors based on chosen element
 - Login button
-- Create account button
 - Display latest news or Guides
 
 #### Characters
 
 - Collect all remaining images
 - Finish displaying all information
-- Page de modification de personnage
+- Character edit page
 
 #### Weapons
 
 - Display weapons menu
 - Create weapon information page
 - Collect all images
+- Weapon edit page
 
 #### Enemies
 
 - Display enemy menu
 - Create enemy information page
 - Collect all images
+- Enemy edit page
 
 #### Guides
 
@@ -52,7 +52,6 @@ Completion bar: [/////.....] in rough %.
 #### My Account
 
 - Waiting for back-end before continuing
-- 'my account' page and all its structure and styles
 
 ## Conventions
 

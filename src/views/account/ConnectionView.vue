@@ -74,7 +74,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 320px;
     margin: auto;
     padding: 1rem;
 }
@@ -86,7 +86,7 @@ export default {
 .login-form, .create-form {
     display: flex;
     justify-content: center;
-    width: 40%;
+    width: 320px;
     margin: 1rem;
     padding: 1rem;
     border-radius: 1rem;
@@ -98,7 +98,7 @@ export default {
 .account-box-options {
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    min-width: 320px;
     margin: 1rem;
     padding: 1rem;
     border: 2px solid #FAF6EC;
@@ -108,7 +108,7 @@ export default {
 }
 
 input[type=button] {
-    width: 200px;
+    width: 150px;
     padding: 0.5rem;
     font-size: 1.2rem;
     border-radius: 1rem;
@@ -126,10 +126,44 @@ ul {
 }
 
 
-@media screen and (min-size: 1061px) {
+@media screen and (min-width: 1061px) {
+    .logged-out {
+        padding: 1rem;
+    }
+
+    .logged-in {
+        width: 1024px;
+    }
+
+    .account-info {
+        margin: 1rem;
+    }
+
+    .login-form, .create-form {
+        display: flex;
+        justify-content: center;
+        width: 800px;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        border-top-left-radius: 0;
+        border: 2px solid #FAF6EC;
+        box-shadow: 0px 0px 8px 12px #adaaa3;
+    }
+
+    .account-box-options {
+        display: flex;
+        justify-content: space-around;
+        width: 800px;
+    }
+
+    input[type=button] {
+    width: 200px;
+    }
+
     ul {
-    width: 600px;
-    border: 2px solid #FAF6EC;
-}
+        width: 600px;
+        border: 2px solid #FAF6EC;
+    }
 }
 </style>
