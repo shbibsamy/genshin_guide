@@ -2,7 +2,7 @@
     <div class="account-box">
         <h2>Account Options</h2>
         <div class="logged-out" v-if="logged==false">
-            <div class="account-box-options border">
+            <div class="account-box-options">
                 <input type="button" value="Login" @click="showForm('login')">
                 <input type="button" value="Create" @click="showForm('create')">
             </div>

@@ -112,10 +112,6 @@ a {
         align-items: center;
     }
 
-    .home {
-        height: 70vh;
-    }
-
     .header ul {
         display: flex;
         flex-direction: row;

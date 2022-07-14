@@ -17,9 +17,9 @@ export default {
 
 <style>
 .home {
-  min-height: 50vh;
-  background-image: url('');
-  background-size: 100vw;
+  /* min-height: 50vh; */
+  /* background-image: url(''); */
+  /* background-size: 100vw; */
   background-repeat: no-repeat;
   background-position: bottom;
 
