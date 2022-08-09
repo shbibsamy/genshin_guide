@@ -32,6 +32,10 @@ img {
     color: #FAF6EC;
 }
 
+body {
+    background-color: #2D2A29;
+}
+
 .header {
     background: radial-gradient(ellipse at 50%, rgba(239, 121, 57, 0.25), #2D2A29);
     border-bottom: 2px solid #EF7939;
@@ -40,10 +44,7 @@ img {
 
 main {
     margin: 1rem;
-}
-
-body {
-    background-color: #2D2A29;
+    min-height: 60vh;
 }
 
 footer {
@@ -58,8 +59,8 @@ footer {
 /* General styles */
 h1 {
     font-size: 2rem;
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
     border: 2px solid #EF7939;
     margin-bottom: 0%;
     box-shadow: 0 0 0 3px #c25030;
@@ -88,7 +89,9 @@ h5 {
     display: flex;
     justify-content: space-between;
     width: 240px;
+    margin: 0.5rem;
     margin-top: 1rem;
+    
 }
 
 .header select {

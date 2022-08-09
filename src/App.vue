@@ -3,7 +3,7 @@
     <header class="header border shadow">
       <h1 class="border shadow">Genshin Guide</h1>
       <label>
-        <span>Choose your element</span>
+        <span class="element-select">Choose your element</span>
         <select name="element" @change="elementSelector()" v-model="elementColor" class="border">
           <option value="pyro">Pyro</option>
           <option value="hydro">Hydro</option>
