@@ -9,24 +9,26 @@ Completion bar: [/////.....] in rough %.
 
 \* working on
 
-- Home          [/////.....]
-- Characters    [//////....]
-- Weapons       [//........]
-- Enemies       [/.........]
-- Guides        [///.......]
-- My Account    [//........]
+- Home          [//////....]
+- Characters    [///////...]
+- Weapons       [//........] All features implemented for this version. Will not be taking further.
+- Enemies       [/.........] All features implemented for this version. Will not be taking further.
+- Guides        [///.......] *
+- My Account    [//////....] All features implemented for this version. Will not be taking further.
 
 #### Home
 
-- Background image
-- Login button
-- Display latest news or Guides
+- Background image position shift down
+- Display latest news or Guide
 
 #### Characters
 
 - Collect all remaining images
 - Finish displaying all information
-- Character edit page
+- Character info page:
+  - text to uppercase
+  - update comment on name
+  - save logged in username to comment
 
 #### Weapons
 
@@ -44,14 +46,11 @@ Completion bar: [/////.....] in rough %.
 
 #### Guides
 
-- Requries account setup and admin login: waiting for back-end setup
-- Create guide page
 - Write some example content
 - Display content dynamically
+- Decide on guide content and layout template
 
 #### My Account
-
-- Waiting for back-end before continuing
 
 ## Conventions
 

@@ -6,7 +6,6 @@ import WeaponsView from '../views/weapons/WeaponsView.vue'
 import EnemiesView from '../views/enemies/EnemiesView.vue'
 import GuidesView from '../views/guides/GuidesView.vue'
 import ConnectionView from '../views/account/ConnectionView.vue'
-import MyAccount from '../views/account/MyAccountView.vue'
 
 const routes = [
   {
@@ -45,14 +44,6 @@ const routes = [
     name: 'Account',
     component: ConnectionView
   },
-  // {
-  //   path: '/weapons',
-  //   name: 'weapons',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/WeaponsView.vue')
-  // }
 ]
 
 const router = createRouter({
