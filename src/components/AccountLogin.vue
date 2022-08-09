@@ -2,25 +2,65 @@
     <form action="" method="POST">
         <h3>Login</h3>
         <fieldset>
-        <legend>Account Information</legend>
+            <legend>Account Information</legend>
             <label class="login-form-item">
                 <span>Username</span>
-                <input type="text" name="username" v-model="loginInfo.username">
+                <input type="text" name="username" v-model="newLoginInfo.username">
             </label>
             <label class="login-form-item">
                 <span>Password</span>
-                <input type="password" name="password">
+                <input type="password" name="password" v-model="newLoginInfo.password">
             </label>
         </fieldset>
-        <input type="submit" value="Log-in">
+        <input type="submit" value="Log-in" @click.prevent="login">
+        <span id="warning"></span>
     </form>
 </template>
 <script>
+import sanitiserMixin from '@/mixins/sanitiserMixin.js';
+import router from '@/router';
+
 export default {
     name: 'AccountLogin',
+    mixins: [sanitiserMixin],
     data: function () {
         return {
-            loginInfo: {},
+            newLoginInfo: {},
+        }
+    },
+    methods: {
+        login() {
+            let verify;
+            let input = this.newLoginInfo;
+            let warning = document.getElementById('warning');
+            switch(input.username) {
+                case 'admin':
+                    verify = this.$store.state.admin;
+                    if(input.username == verify.username && input.password == verify.password) {
+                        this.$store.commit("LOGIN", 'admin');
+                    } else {
+                        warning.innerText = 'Incorrect user information';
+                    }
+                    break;
+                case 'test':
+                    verify = this.$store.state.client;
+                    if(input.username == verify.username && input.password == verify.password) {
+                        this.$store.commit("LOGIN", 'client');
+                    } else {
+                        warning.innerText = 'Incorrect user information';
+                    }
+                    break;
+                case 'test2':
+                    verify = this.$store.state.newClient;
+                    if(input.username == verify.username && input.password == verify.password) {
+                        this.$store.commit("LOGIN", 'client');
+                    } else {
+                        warning.innerText = 'Incorrect user information';
+                    }
+                    break;
+                default:
+                    warning.innerText = 'User does not exist';
+            }
         }
     }
 }
@@ -28,12 +68,16 @@ export default {
 <style scoped>
 form {
     width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 fieldset {
     text-align: left;
     margin-top: 1rem;
     padding: 0.5rem;
+    width: 100%;
     border: 2px solid #FAF6EC;
     border-radius: 1rem;
     border-top-left-radius: 0;
@@ -61,12 +105,7 @@ input[type=text], input[type=password] {
     border-top-left-radius: 0;
 }
 
-input[type=submit], input[type=button] {
-    width: 200px;
-    margin-top: 1rem;
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    border-radius: 1rem;
-    border-top-left-radius: 0;
+#warning {
+    margin: 1rem;
 }
 </style>

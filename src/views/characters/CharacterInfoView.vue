@@ -29,7 +29,7 @@
             </ul>
         </div>
         <section class="comments-section">
-            <div class="new-comment">
+            <div class="new-comment" v-if="this.$store.state.loggedIn.length != 0">
                 <CommentEmptyBox :characterName="characterInfo.name" ></CommentEmptyBox>
             </div>
             <div class="comments" v-if="currentCharacterComments.length>0">

@@ -1,7 +1,7 @@
 <template>
     <div class="account-box">
-        <h2>Account Options</h2>
-        <div class="logged-out" v-if="logged==false">
+        <h2>My Account</h2>
+        <div class="logged-out" v-if="this.$store.state.loggedIn.length == 0">
             <div class="account-box-options">
                 <input type="button" value="Login" @click="showForm('login')">
                 <input type="button" value="Create" @click="showForm('create')">
@@ -10,32 +10,21 @@
                 <AccountLogin />
             </div>
             <div class="create-form" v-if="create==true">
-                <AccountCreate />
+                <AccountCreate @close="create=false"/>
             </div>
         </div>
-        <div class="logged-in" v-if="logged==true">
-            <h3>Welcome back! (mockup, just for show, no security or real data)</h3>
-            <div class="account-info">
-                <h4>Account information</h4>
-                <ul>
-                    <li>
-                        <span>First Name: X</span>
-                    </li>
-                    <li>
-                        <span>Last Name: X</span>
-                    </li>
-                    <li>
-                        <span>Username: X</span>
-                    </li>
-                </ul>
-                <input type="button" value="Modify">
+        <div class="logged-in" v-if="this.$store.state.loggedIn.length != 0">
+            <h3>Welcome!</h3>
+            <div class="account-options">
+            <input type="button" value="Logout" @click="logout">
             </div>
         </div>
     </div>
 </template>
 <script>
-import AccountCreate from '@/components/AccountCreate.vue'
-import AccountLogin from '@/components/AccountLogin.vue'
+import AccountCreate from '@/components/AccountCreate.vue';
+import AccountLogin from '@/components/AccountLogin.vue';
+
 export default {
     name: 'Connection',
     components: {
@@ -58,6 +47,9 @@ export default {
                 this.create = !this.create;
                 this.login = false;
             }
+        },
+        logout() {
+            this.$store.commit("LOGOUT");
         }
     }
 }
@@ -125,6 +117,9 @@ ul {
     border: 2px solid #FAF6EC;
 }
 
+.account-options {
+    margin: 1rem;
+}
 
 @media screen and (min-width: 1061px) {
     .logged-out {
