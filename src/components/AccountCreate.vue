@@ -20,22 +20,34 @@
         <legend>Password creation</legend>
             <label class="create-form-item">
                 <span>Password</span>
-                <input type="password" name="password">
+                <input type="password" name="password" v-model="newAccountInfo.password">
             </label>
             <label class="create-form-item">
                 <span>Re-type your password</span>
-                <input type="password" name="password-verif">
+                <input type="password" name="password-verif" v-model="passwordVerify">
             </label>
         </fieldset>
-        <input type="submit" value="Create Account">
+        <input type="submit" value="Create Account" @click.prevent="createAccount">
     </form>
 </template>
 <script>
+import sanitiserMixin from '@/mixins/sanitiserMixin.js';
+
 export default {
     name: 'AccountCreate',
+    mixins: [sanitiserMixin],
     data: function () {
         return {
             newAccountInfo: {},
+            passwordVerify: '',
+        }
+    },
+    methods: {
+        createAccount() {
+            if(this.newAccountInfo.password === this.passwordVerify) {
+                this.$store.commit("CREATE_NEW_ACCOUNT", this.newAccountInfo);
+            }
+            this.$emit("close");
         }
     }
 }
@@ -77,12 +89,4 @@ input[type=text], input[type=password] {
     border-top-left-radius: 0;
 }
 
-input[type=submit], input[type=button] {
-    width: 200px;
-    margin-top: 1rem;
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    border-radius: 1rem;
-    border-top-left-radius: 0;
-}
 </style>

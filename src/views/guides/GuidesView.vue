@@ -1,7 +1,7 @@
 <template>
   <div class="guides">
     <h2>Guides</h2>
-    <input type="button" value="Write a new guide" @click="openNewGuide()">
+    <input type="button" value="Write a new guide" v-if="this.$store.state.loggedIn == 'admin'" @click="openNewGuide()">
     <div class="newGuide" v-if="newGuide==true">
       <NewGuide />
     </div>
