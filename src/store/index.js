@@ -17,6 +17,7 @@ state: {
     characterComment: [],
     currentCharacterInfo: {},
     currentWeaponInfo: {},
+    posts: [{},{}],
     },
     getters: {
     },

@@ -17,20 +17,21 @@ export default {
 
 <style>
 .home {
-        min-height: 55vh;
-        background-image: url('../../public/img/azhdaha.png');
-        background-size: 90vw;
-        background-repeat: no-repeat;
-        background-position: bottom;
-    }
+    background-image: url('../../public/img/azhdaha.png');
+    background-size: 100%;
+    background-size: cover;
+    background-position: -30rem 15rem;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 
-    img {
-        width: 100%;
-    }
+img {
+    width: 100%;
+}
 
 @media screen and (min-width: 1061px) {
     .home {
-        background-size: 60vw;
+        background-position: -15rem 15rem;
     }
 }
 </style>
