@@ -17,7 +17,9 @@ state: {
     characterComment: [],
     currentCharacterInfo: {},
     currentWeaponInfo: {},
-    posts: [{},{}],
+    guides: [
+        {'title':'Welcome to GG!', 'content1':'The grand inauguration of my small site dedicated to Genshin Impact.', 'imgurl':'https://bit.ly/3bLJgLW','content2':'Thanks for checking out our content and I look forward to helping out new players enjoy the game.'},
+        {'title':'Priorities for Beginners', 'content1':'There are a few different paths to power in Genshin Impact. Here I want to help you prioritise your progression. The general rule of thumb is to get your character to the highest level available to you, except 90 which I believe is only useful after AR50. The same applies to your second priority, your weapon. The big milestone to hit is level 7O with both and then you can use the character quite comfortably in most over-world end-game content.', 'imgurl':'https://bit.ly/3zLapGS','content2':'Next you want to focus on artifacts. In this order: Flower - Feather - Time piece - Goblet - Circlet, aim for these main stats for DPS Characters: HP - ATK - ATK% - Elemental Damage% - CRIT.'}],
     },
     getters: {
     },

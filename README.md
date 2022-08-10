@@ -13,7 +13,7 @@ Completion bar: [/////.....] in rough %.
 - Characters    [///////...]
 - Weapons       [//........] All features implemented for this version. Will not be taking further.
 - Enemies       [/.........] All features implemented for this version. Will not be taking further.
-- Guides        [///.......] *
+- Guides        [//////....] *
 - My Account    [//////....] All features implemented for this version. Will not be taking further.
 
 #### Home
@@ -46,9 +46,10 @@ Completion bar: [/////.....] in rough %.
 
 #### Guides
 
-- Write some example content
-- Display content dynamically
 - Decide on guide content and layout template
+- Enable adding new guides through this template
+- Guide click to see detail view solve bug
+- CSS for guides and some layout stuff
 
 #### My Account
 
