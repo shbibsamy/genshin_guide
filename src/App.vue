@@ -51,16 +51,13 @@
 <script>
 export default {
   name: "app",
-  data: function() {
+  data() {
     return {
       data: {},
       elementColor:'pyro',
     }
   },
   methods: {
-    tempLog() {
-
-    },
     closeMenu() {
       let menuButton = document.querySelector(".menu-bouton");
       menuButton.checked = false;

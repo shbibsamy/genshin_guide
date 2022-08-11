@@ -31,7 +31,7 @@ export default {
         AccountCreate,
         AccountLogin,
     },
-    data: function() {
+    data() {
         return {
             login: false,
             create: false,

@@ -50,7 +50,7 @@ export default {
     props: {
         characterInfoString:null,
     },
-    data: function(){
+    data(){
         return {
             currentCharacterComments: [],
             characterInfo: {},

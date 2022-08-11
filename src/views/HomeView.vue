@@ -13,7 +13,7 @@ export default {
     components: {
     Guide,
     },
-    data: function() {
+    data() {
         return {
         message: "",
         guide: '',
@@ -36,8 +36,8 @@ export default {
     background-image: url('../../public/img/azhdaha.png');
     background-size: 100%;
     background-size: cover;
-    background-position: -40rem 13rem;
-    background-attachment: fixed;
+    background-position: -20rem 2rem;
+    /* background-attachment: fixed; */
     background-repeat: no-repeat;
 }
 
@@ -48,7 +48,7 @@ img {
 @media screen and (min-width: 1061px) {
     .home {
         min-height: 68vh;
-        background-position: -15rem 15rem;
+        background-position: 0rem 2rem;
     }
 }
 </style>

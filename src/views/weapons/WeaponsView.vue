@@ -17,7 +17,7 @@ export default {
   props: {
     
   },
-  data: function () {
+  data() {
     return {
       weaponInfo: [],
     }

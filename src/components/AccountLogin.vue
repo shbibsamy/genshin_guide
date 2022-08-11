@@ -23,7 +23,7 @@ import router from '@/router';
 export default {
     name: 'AccountLogin',
     mixins: [sanitiserMixin],
-    data: function () {
+    data () {
         return {
             newLoginInfo: {},
         }

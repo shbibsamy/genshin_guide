@@ -20,7 +20,7 @@ export default {
     props: {
         guide: String,
     },
-    data: function() {
+    data() {
         return {
             guideObj: {}
         }

@@ -20,7 +20,7 @@ export default {
     props: {
         guide: String,
     },
-    data: function() {
+    data() {
         return {
             guideObj: {}
         }
@@ -38,8 +38,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    margin: 1rem;
+    width: 90%;
+    margin: auto;
     padding: 1rem;
     border: 2px solid #FAF6EC;
 }
@@ -58,10 +58,17 @@ export default {
 
 .guide-content {
     margin: 1rem;
-    width: 60%;
+    width: 90%;
 }
 
 .guide-image {
-    width: 50%;
+    width: 80%;
+}
+
+@media screen and (min-width: 1061px) {
+    .guide {
+        width: 80%;
+        max-width: 1200px;
+    }
 }
 </style>

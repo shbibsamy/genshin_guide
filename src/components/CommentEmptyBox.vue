@@ -25,7 +25,7 @@ export default {
     props: {
         characterName: String
     },
-    data: function() {
+    data() {
         return {
             characterData: {
             "name": "Yelan",

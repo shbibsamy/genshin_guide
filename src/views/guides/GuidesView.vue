@@ -22,7 +22,7 @@ export default {
     components: {
         NewGuide,
     },
-    data: function(){
+    data(){
         return {
         newGuide: false,
         guides:{},
@@ -33,7 +33,8 @@ export default {
         this.newGuide = !this.newGuide;
         },
         openGuide(guide) {
-            router.push({name:'guide.title', params: {'guide':JSON.stringify(guide)}})
+            let title = guide.title
+            router.push({name:'GuidesDetail', params: { title, 'guide':JSON.stringify(guide)}})
         }
     },
     mounted() {

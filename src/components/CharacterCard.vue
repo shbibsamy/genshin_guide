@@ -20,7 +20,7 @@ export default {
             required: true,
         }
     },
-    data: function() {
+    data() {
         return {
             characterInfo: {},
             imgUrls: {},

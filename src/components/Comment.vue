@@ -18,7 +18,7 @@ export default {
     props: {
         comment: null,
     },
-    data: function() {
+    data() {
         return {
         }
     },

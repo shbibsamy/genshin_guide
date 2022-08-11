@@ -53,7 +53,7 @@ export default {
     props: {
         characterName: String
     },
-    data: function() {
+    data() {
         return {
             guideEntry: {
                 "title" : "",
