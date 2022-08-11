@@ -2,7 +2,7 @@
   <div class="weapons">
     <h2>Weapons</h2>
     <div class="cards">
-      <WeaponCard v-for="name in this.$store.state.data.weapons" :weaponName=name class="weapon"/>
+      <WeaponCard v-for="name in this.$store.state.data.weapons" :weaponName="name" class="weapon"/>
     </div>
   </div>
 </template>

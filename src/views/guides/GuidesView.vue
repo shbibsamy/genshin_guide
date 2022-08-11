@@ -39,7 +39,6 @@ export default {
     },
     mounted() {
         this.guides = this.$store.state.guides;
-        console.log(this.guides)
     },
 }
 </script>

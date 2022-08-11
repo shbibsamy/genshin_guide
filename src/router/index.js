@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CharactersView from '../views/characters/CharactersView.vue'
-import CharacterInfoView from '../views/characters/CharacterInfoView.vue'
+import CharacterDetailView from '../views/characters/CharacterDetailView.vue'
 import WeaponsView from '../views/weapons/WeaponsView.vue'
 import EnemiesView from '../views/enemies/EnemiesView.vue'
 import GuidesView from '../views/guides/GuidesView.vue'
@@ -20,9 +20,9 @@ const routes = [
     component: CharactersView
   },
   {
-    path: '/characters/info',
-    name: 'Info',
-    component: CharacterInfoView,
+    path: '/characters/detail',
+    name: 'Detail',
+    component: CharacterDetailView,
     props: true
   },
   {

@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{ name: 'Info', params: { characterInfoString: JSON.stringify(weaponInfo) }}" @mouseover.native="hover = true" @mouseleave.native="hover = false" class="link card" @click="loadCurrentCharacter()">
+    <router-link :to="{ name: 'Info', params: { weaponInfoString: JSON.stringify(weaponInfo) }}" @mouseover.native="hover = true" @mouseleave.native="hover = false" class="link card" @click="loadCurrentCharacter()">
         <span>{{ weaponInfo.name }}</span>
         <div class="presentation">
             <img class="icon" :src="imgUrls.icon"  v-bind:alt="weaponInfo.name">

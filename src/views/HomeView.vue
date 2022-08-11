@@ -22,7 +22,6 @@ export default {
     },
     created() {
         this.guide = JSON.stringify(this.$store.state.guides[0]);
-        console.log(this.$store.state.guides[0])
     },
 }
 </script>

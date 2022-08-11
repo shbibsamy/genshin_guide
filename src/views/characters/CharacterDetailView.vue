@@ -42,7 +42,7 @@
 import Comment from '@/components/Comment.vue'
 import CommentEmptyBox from '@/components/CommentEmptyBox.vue'
 export default {
-    name: 'CharacterInfoView',
+    name: 'CharacterDetailView',
     components: {
     CommentEmptyBox,
     Comment,

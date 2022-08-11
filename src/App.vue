@@ -64,7 +64,6 @@ export default {
     },
     elementSelector(){
       let headerElement = document.querySelector(".header");
-      console.log(headerElement);
       let headerElementsWithBorders = document.querySelectorAll(".border");
       switch (this.elementColor) {
         case 'pyro':
