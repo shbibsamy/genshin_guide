@@ -60,7 +60,6 @@ export default {
     created(){
         this.characterInfo = JSON.parse(this.characterInfoString);
         this.characterImgUrls.icon='/img/characters/splash/'+this.characterInfo.name+'.webp';
-        // Make this into a loop
         this.characterImgUrls.vision='/img/info-icons/elements/'+this.characterInfo.vision+'.webp';
         this.characterImgUrls.nation='/img/info-icons/nations/'+this.characterInfo.nation+'.webp';
         this.characterImgUrls.weapon='/img/info-icons/weapons/'+this.characterInfo.weapon+'.webp';
@@ -133,7 +132,7 @@ export default {
     padding: 1rem;
 }
 
-@media (min-width: 1061px) {
+@media screen and (min-width: 1061px) {
     .character-header {
     width: 50%;
     }
