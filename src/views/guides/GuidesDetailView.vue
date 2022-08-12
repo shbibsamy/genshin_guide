@@ -29,7 +29,6 @@ export default {
     },
     mounted() {
         this.guideObj = JSON.parse(this.guide);
-        console.log(this.guide);
     },
 }
 </script>
