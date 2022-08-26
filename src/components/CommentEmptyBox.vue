@@ -25,11 +25,11 @@ export default {
     props: {
         characterName: String
     },
+    emits: ['updateComments'],
     data() {
         return {
             characterData: {
-            "name": "Yelan",
-            "weapon" : "bow"
+            "name": "",
             },
             commentEntry: {
                 "characterName" : "",
@@ -44,8 +44,16 @@ export default {
             let newComment = this.commentEntry;
             newComment.characterName = this.characterName;
             this.$store.commit("COMMENT_EXAMPLE_INPUT", newComment);
+            this.$emit('updateComments');
         }
     },
+    mounted(){
+        let name = this.characterName;
+        let firstLetter = name[0].toUpperCase();
+        name = firstLetter+name.slice(1);
+        console.log(name);
+        this.characterData.name = name;
+    }
 }
 </script>
 <style scoped>

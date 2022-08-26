@@ -29,8 +29,8 @@
             </ul>
         </div>
         <section class="comments-section">
-            <div class="new-comment" v-if="this.$store.state.loggedIn.length != 0">
-                <CommentEmptyBox :characterName="characterInfo.name" ></CommentEmptyBox>
+            <div class="new-comment" v-if="this.$store.state.loggedIn.length != 0" >
+                <CommentEmptyBox :characterName="characterInfo.name" @updateComments="newCommentPosted" ></CommentEmptyBox>
             </div>
             <div class="comments" v-if="currentCharacterComments.length>0">
                 <Comment v-for="comment in currentCharacterComments" :comment="comment"></Comment>
@@ -55,6 +55,17 @@ export default {
             currentCharacterComments: [],
             characterInfo: {},
             characterImgUrls: {},
+        }
+    },
+    methods:{
+        newCommentPosted() {
+            this.currentCharacterComments.length = 0;
+            this.$store.state.characterComment.forEach(comment => {
+            if(this.characterInfo.name == comment.characterName) {
+                this.currentCharacterComments.push(comment);
+                console.log(comment)
+            }
+        })
         }
     },
     created(){

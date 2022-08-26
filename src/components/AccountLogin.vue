@@ -17,17 +17,14 @@
     </form>
 </template>
 <script>
-import sanitiserMixin from '@/mixins/sanitiserMixin.js';
-import router from '@/router';
-
 export default {
     name: 'AccountLogin',
-    mixins: [sanitiserMixin],
     data () {
         return {
             newLoginInfo: {},
         }
     },
+    emits: ['login'],
     methods: {
         login() {
             let verify;
@@ -38,6 +35,7 @@ export default {
                     verify = this.$store.state.admin;
                     if(input.username == verify.username && input.password == verify.password) {
                         this.$store.commit("LOGIN", 'admin');
+                        this.$emit('login');
                     } else {
                         warning.innerText = 'Incorrect user information';
                     }
@@ -46,6 +44,7 @@ export default {
                     verify = this.$store.state.client;
                     if(input.username == verify.username && input.password == verify.password) {
                         this.$store.commit("LOGIN", 'client');
+                        this.$emit('login');
                     } else {
                         warning.innerText = 'Incorrect user information';
                     }
@@ -54,6 +53,7 @@ export default {
                     verify = this.$store.state.newClient;
                     if(input.username == verify.username && input.password == verify.password) {
                         this.$store.commit("LOGIN", 'client');
+                        this.$emit('login');
                     } else {
                         warning.innerText = 'Incorrect user information';
                     }
