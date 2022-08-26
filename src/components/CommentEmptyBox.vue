@@ -15,7 +15,7 @@
                     <textarea name="comment-contents" v-model="commentEntry.contents"></textarea>
                 </label>
             </div>
-            <input type="submit" name="submit" value="Post Comment" class="comment-submit-button" @click="postComment">
+            <input type="submit" name="submit" value="Post Comment" class="comment-submit-button" @click.prevent="postComment">
         </form>
     </article>
 </template>
@@ -32,27 +32,38 @@ export default {
             "name": "",
             },
             commentEntry: {
+                "date" : "",
+                "username" : "",
                 "characterName" : "",
                 "title" : "",
                 "contents" : ""
-            }
+            },
+            username:'',
         }
     },
     methods: {
-        postComment: function(e) {
-            e.preventDefault();
+        postComment: function() {
             let newComment = this.commentEntry;
+            let date = new Date();
+            newComment.date = date.toDateString();
+            newComment.username = this.username;
             newComment.characterName = this.characterName;
             this.$store.commit("COMMENT_EXAMPLE_INPUT", newComment);
             this.$emit('updateComments');
+            this.commentEntry = {};
         }
     },
     mounted(){
         let name = this.characterName;
         let firstLetter = name[0].toUpperCase();
-        name = firstLetter+name.slice(1);
-        console.log(name);
+        name = firstLetter + name.slice(1);
         this.characterData.name = name;
+        let type = this.$store.state.loggedIn;
+            if (type=='admin') {
+                this.username = 'Admin'
+            } else {
+                this.username = 'test'
+            }
     }
 }
 </script>

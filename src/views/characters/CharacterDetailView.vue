@@ -63,7 +63,6 @@ export default {
             this.$store.state.characterComment.forEach(comment => {
             if(this.characterInfo.name == comment.characterName) {
                 this.currentCharacterComments.push(comment);
-                console.log(comment)
             }
         })
         }
