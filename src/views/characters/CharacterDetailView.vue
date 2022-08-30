@@ -44,8 +44,8 @@ import CommentEmptyBox from '@/components/CommentEmptyBox.vue'
 export default {
     name: 'CharacterDetailView',
     components: {
-    CommentEmptyBox,
-    Comment,
+        CommentEmptyBox,
+        Comment,
     },
     props: {
         characterInfoString:null,
