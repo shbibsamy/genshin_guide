@@ -17,7 +17,7 @@ export default {
   props: {
     
   },
-  data: function () {
+  data() {
     return {
       characterInfo: [],
     }
@@ -28,7 +28,7 @@ export default {
 <style scoped>
 .characters {
   min-height: 50vh;
-  width: 90%;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -48,18 +48,18 @@ h2 {
 .character {
   border: 2px solid #FAF6EC;
   box-shadow: 0 0 0 3px #adaaa3;
-  width: 180px;
-  margin: 10px;
+  width: 155px;
+  margin: 8px;
   height: 235px;
 }
 
 @media screen and (min-width: 1061px) {
   .characters {
-    width: 80%;
+    width: 85%;
   }
 
   .character {
-  width: 288px;
+  width: 260px;
   margin: 15px;
   height: 380px;
   }

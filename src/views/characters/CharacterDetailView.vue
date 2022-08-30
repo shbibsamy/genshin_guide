@@ -29,8 +29,8 @@
             </ul>
         </div>
         <section class="comments-section">
-            <div class="new-comment" v-if="this.$store.state.loggedIn.length != 0">
-                <CommentEmptyBox :characterName="characterInfo.name" ></CommentEmptyBox>
+            <div class="new-comment" v-if="this.$store.state.loggedIn.length != 0" >
+                <CommentEmptyBox :characterName="characterInfo.name" @updateComments="newCommentPosted" ></CommentEmptyBox>
             </div>
             <div class="comments" v-if="currentCharacterComments.length>0">
                 <Comment v-for="comment in currentCharacterComments" :comment="comment"></Comment>
@@ -42,7 +42,7 @@
 import Comment from '@/components/Comment.vue'
 import CommentEmptyBox from '@/components/CommentEmptyBox.vue'
 export default {
-    name: 'CharacterInfoView',
+    name: 'CharacterDetailView',
     components: {
     CommentEmptyBox,
     Comment,
@@ -50,17 +50,26 @@ export default {
     props: {
         characterInfoString:null,
     },
-    data: function(){
+    data(){
         return {
             currentCharacterComments: [],
             characterInfo: {},
             characterImgUrls: {},
         }
     },
+    methods:{
+        newCommentPosted() {
+            this.currentCharacterComments.length = 0;
+            this.$store.state.characterComment.forEach(comment => {
+            if(this.characterInfo.name == comment.characterName) {
+                this.currentCharacterComments.push(comment);
+            }
+        })
+        }
+    },
     created(){
         this.characterInfo = JSON.parse(this.characterInfoString);
         this.characterImgUrls.icon='/img/characters/splash/'+this.characterInfo.name+'.webp';
-        // Make this into a loop
         this.characterImgUrls.vision='/img/info-icons/elements/'+this.characterInfo.vision+'.webp';
         this.characterImgUrls.nation='/img/info-icons/nations/'+this.characterInfo.nation+'.webp';
         this.characterImgUrls.weapon='/img/info-icons/weapons/'+this.characterInfo.weapon+'.webp';
@@ -133,7 +142,7 @@ export default {
     padding: 1rem;
 }
 
-@media (min-width: 1061px) {
+@media screen and (min-width: 1061px) {
     .character-header {
     width: 50%;
     }

@@ -1,5 +1,5 @@
 <template>
-    <router-link :to="{ name: 'Info', params: { characterInfoString: JSON.stringify(characterInfo) }}" @mouseover.native="hover = true" @mouseleave.native="hover = false" class="link card" @click="loadCurrentCharacter()">
+    <router-link :to="{ name: 'Detail', params: { characterInfoString: JSON.stringify(characterInfo) }}" @mouseover.native="hover = true" @mouseleave.native="hover = false" class="link card" @click="loadCurrentCharacter()">
         <span>{{ characterInfo.name }}</span>
         <div class="information">
             <img class="info" :src="imgUrls.weapon" v-bind:alt="characterInfo.weapon">
@@ -20,7 +20,7 @@ export default {
             required: true,
         }
     },
-    data: function() {
+    data() {
         return {
             characterInfo: {},
             imgUrls: {},

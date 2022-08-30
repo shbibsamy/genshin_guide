@@ -31,12 +31,9 @@
     </form>
 </template>
 <script>
-import sanitiserMixin from '@/mixins/sanitiserMixin.js';
-
 export default {
     name: 'AccountCreate',
-    mixins: [sanitiserMixin],
-    data: function () {
+    data() {
         return {
             newAccountInfo: {},
             passwordVerify: '',

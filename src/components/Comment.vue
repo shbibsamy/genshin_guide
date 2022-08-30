@@ -2,8 +2,8 @@
     <article class="comment">
         <div class="comment-header">
             <h4>{{ comment.title}}</h4>
-            <span class="comment-username">Posted by: USERNAME </span>
-            <span class="comment-date">On: DATE/00/00</span>
+            <span class="comment-username">Posted by: {{ comment.username }} </span>
+            <span class="comment-date"> On: {{ comment.date }}</span>
         </div>
         <div class="comment-body">
             <p>
@@ -18,7 +18,7 @@ export default {
     props: {
         comment: null,
     },
-    data: function() {
+    data() {
         return {
         }
     },

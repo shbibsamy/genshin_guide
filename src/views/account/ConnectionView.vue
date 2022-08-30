@@ -7,14 +7,14 @@
                 <input type="button" value="Create" @click="showForm('create')">
             </div>
             <div class="login-form" v-if="login==true">
-                <AccountLogin />
+                <AccountLogin @login="updateMessage" />
             </div>
             <div class="create-form" v-if="create==true">
-                <AccountCreate @close="create=false"/>
+                <AccountCreate @close="create=false" />
             </div>
         </div>
         <div class="logged-in" v-if="this.$store.state.loggedIn.length != 0">
-            <h3>Welcome!</h3>
+            <h3> {{ message }}</h3>
             <div class="account-options">
             <input type="button" value="Logout" @click="logout">
             </div>
@@ -31,11 +31,12 @@ export default {
         AccountCreate,
         AccountLogin,
     },
-    data: function() {
+    data() {
         return {
             login: false,
             create: false,
             logged: false,
+            message: '',
         }
     },
     methods: {
@@ -50,7 +51,18 @@ export default {
         },
         logout() {
             this.$store.commit("LOGOUT");
+        },
+        updateMessage(){
+            let type = this.$store.state.loggedIn;
+            if (type=='admin') {
+                this.message = 'Welcome, Admin!'
+            } else {
+                this.message = 'Welcome, Friend!'
+            }
         }
+    },
+    mounted() {
+        this.updateMessage();
     }
 }
 </script>

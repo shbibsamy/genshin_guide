@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CharactersView from '../views/characters/CharactersView.vue'
-import CharacterInfoView from '../views/characters/CharacterInfoView.vue'
+import CharacterDetailView from '../views/characters/CharacterDetailView.vue'
 import WeaponsView from '../views/weapons/WeaponsView.vue'
 import EnemiesView from '../views/enemies/EnemiesView.vue'
 import GuidesView from '../views/guides/GuidesView.vue'
+import GuidesDetailView from '../views/guides/GuidesDetailView.vue'
 import ConnectionView from '../views/account/ConnectionView.vue'
 
 const routes = [
@@ -19,9 +20,9 @@ const routes = [
     component: CharactersView
   },
   {
-    path: '/characters/info',
-    name: 'Info',
-    component: CharacterInfoView,
+    path: '/characters/detail',
+    name: 'Detail',
+    component: CharacterDetailView,
     props: true
   },
   {
@@ -38,6 +39,12 @@ const routes = [
     path: '/guides',
     name: 'Guides',
     component: GuidesView
+  },
+  {
+    path: '/guides/:title',
+    name: 'GuidesDetail',
+    component: GuidesDetailView,
+    props: true,
   },
   {
     path: '/account',
