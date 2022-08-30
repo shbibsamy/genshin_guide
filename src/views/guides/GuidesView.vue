@@ -33,7 +33,7 @@ export default {
         this.newGuide = !this.newGuide;
         },
         openGuide(guide) {
-            let title = guide.title
+            let title = guide.title;
             router.push({name:'GuidesDetail', params: { title, 'guide':JSON.stringify(guide)}})
         }
     },
@@ -55,16 +55,23 @@ export default {
 .guide-section {
     margin: 1rem;
     padding: 1rem;
-    border: 2px solid white;
+    border-radius: 1rem;
+    border-top-left-radius: 0;
+    border: 2px solid #FAF6EC;
+    /* box-shadow: 0px 0px 6px 6px #adaaa3; */
 }
 
 .guide {
     margin: 1rem;
     padding: 1rem;
+    border-radius: 1rem;
+    border-top-left-radius: 0;
+    border: 2px solid #FAF6EC;
+    box-shadow: 0px 0px 6px 6px #adaaa3;
 }
 
 .guide:hover {
-    background-color: white;
+    background-color: #adaaa3;
 }
 
 .newGuide {

@@ -10,36 +10,19 @@
             </fieldset>
             <div div class="guide-body">
                 <fieldset class="guide-section"> 
-                    <label class="guide-image-area">
-                        <span>Upload a header image for your guide</span>
-                        <input type="file" accept="image/png, image/jpg, image/jpeg" name="guide-file-upload-1">
-                    </label>
-
                     <label class="guide-textarea">
                         <span>Type the first part of your guide here:</span>
                         <textarea name="guide-contents" v-model="guideEntry.contentsA"></textarea>
                     </label>
+                    <label class="guide-image-area">
+                        <span>Upload an image for your guide</span>
+                        <input type="file" accept="image/png, image/jpg, image/jpeg" name="guide-file-upload-1">
+                    </label>
                 </fieldset> 
                 <fieldset class="guide-section">
-                    <label class="guide-image-area">
-                        <span>Upload a second image for your guide</span>
-                        <input type="file" name="guide-file-upload-2">
-                    </label>
-
                     <label class="guide-textarea">
                         <span>Type the second part of your guide here:</span>
                         <textarea name="guide-contents" v-model="guideEntry.contentsB"></textarea>
-                    </label>
-                </fieldset>
-                <fieldset class="guide-section">
-                    <label class="guide-image-area">
-                        <span>Upload a final image for your guide</span>
-                        <input type="file" name="guide-file-upload-3">
-                    </label>
-
-                    <label class="guide-textarea">
-                        <span>Type the third part of your guide here:</span>
-                        <textarea name="guide-contents" v-model="guideEntry.contentsC"></textarea>
                     </label>
                 </fieldset>
             </div>
